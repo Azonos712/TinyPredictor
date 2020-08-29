@@ -8,3 +8,7 @@ D:\JustProjects\#SimpleCode\UltimatePredictor\WindowsFormsApp1\obj\Debug\Windows
 D:\JustProjects\#SimpleCode\UltimatePredictor\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CoreCompileInputs.cache
 D:\JustProjects\#SimpleCode\UltimatePredictor\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
 D:\JustProjects\#SimpleCode\UltimatePredictor\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
+D:\JustProjects\#SimpleCode\UltimatePredictor\WindowsFormsApp1\bin\Debug\predictionsConfig.json
+D:\JustProjects\#SimpleCode\UltimatePredictor\WindowsFormsApp1\bin\Debug\Newtonsoft.Json.dll
+D:\JustProjects\#SimpleCode\UltimatePredictor\WindowsFormsApp1\bin\Debug\Newtonsoft.Json.xml
+D:\JustProjects\#SimpleCode\UltimatePredictor\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CopyComplete

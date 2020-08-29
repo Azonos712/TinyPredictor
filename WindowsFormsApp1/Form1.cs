@@ -3,17 +3,21 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Newtonsoft.Json;
 
 namespace WindowsFormsApp1
 {
     public partial class Form1 : Form
     {
         private const string APP_NAME = "Ultimate Predictor";
+        private readonly string PREDICTION_CONFIG_PATH = $"{Environment.CurrentDirectory}\\predictionsConfig.json";
+        private string[] _predictions;
         public Form1()
         {
             InitializeComponent();
@@ -49,6 +53,27 @@ namespace WindowsFormsApp1
         private void Form1_Load(object sender, EventArgs e)
         {
             this.Text = APP_NAME;
+
+            try
+            {
+                var data = File.ReadAllText(PREDICTION_CONFIG_PATH);
+                _predictions = JsonConvert.DeserializeObject<string[]>(data);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                throw;
+            }
+            finally
+            {
+                if (_predictions == null)
+                    Close();
+                else if (_predictions.Length == 0)
+                {
+                    MessageBox.Show("Предсказания закончились, кина не будет! =)");
+                    Close();
+                }
+            }
         }
     }
 }
