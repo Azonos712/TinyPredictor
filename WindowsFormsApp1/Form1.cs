@@ -18,6 +18,8 @@ namespace WindowsFormsApp1
         private const string APP_NAME = "Ultimate Predictor";
         private readonly string PREDICTION_CONFIG_PATH = $"{Environment.CurrentDirectory}\\predictionsConfig.json";
         private string[] _predictions;
+        private Random _random = new Random();
+
         public Form1()
         {
             InitializeComponent();
@@ -43,8 +45,10 @@ namespace WindowsFormsApp1
                 }
             });
 
+            var index = _random.Next(_predictions.Length);
+            var prediction = _predictions[index];
             //Сообщение отобразится после только завершения метода с ключевым словом await.
-            MessageBox.Show("Prediction");
+            MessageBox.Show($"{prediction}!");
             progressBar1.Value = 0;
             this.Text = APP_NAME;
             btnPredict.Enabled = true;
