@@ -21,6 +21,7 @@ namespace WindowsFormsApp1
 
         private async void btnPredict_Click(object sender, EventArgs e)
         {
+            btnPredict.Enabled = false;
             //С ключевым словом await программа ждёт пока выполнится кусок кода, запущенный в другом потоке при помощи Task.Run.
             //При этом UI не блокируется.
             //После завершения исполнения этого кода продолжается выполнение метода.
@@ -40,6 +41,9 @@ namespace WindowsFormsApp1
 
             //Сообщение отобразится после только завершения метода с ключевым словом await.
             MessageBox.Show("Prediction");
+            progressBar1.Value = 0;
+            this.Text = APP_NAME;
+            btnPredict.Enabled = true;
         }
 
         private void Form1_Load(object sender, EventArgs e)
